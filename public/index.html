@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SSE-test</title>
+  </head>
+  <body>
+    HELLO WORLD.
+    <div id="msg"></div>
+    <script>
+      let ev = new EventSource('/sse');
+      ev.addEventListener('hoge', (result)=>{
+        document.getElementById('msg').innerHTML += `<h4>${result.data}</h4>`;
+      });
+    </script>
+  </body>
+</html>
+
